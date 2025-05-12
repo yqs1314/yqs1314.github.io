@@ -1,0 +1,177 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>github多用户实例</title><meta name="author" content="yqs"><meta name="copyright" content="yqs"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="1、同一台电脑上使用两个 github 账号教程 创建SSH key 我有两个账号 ssh-keygen -t rsa -C 2416850394@qq.com ssh-keygen -t rsa -C 483440078@qq.com cmd窗口执行命令时会提示生成私钥公钥的地址及文件名，这里我们自定义文件名方便后续操作   2、将公钥分别配置在对应Github账户的SSH Key中。 登录Gi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="github多用户实例">
+<meta property="og:url" content="https://yqs1314.github.io/2025/05/12/github%E5%A4%9A%E7%94%A8%E6%88%B7%E5%AE%9E%E4%BE%8B/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1、同一台电脑上使用两个 github 账号教程 创建SSH key 我有两个账号 ssh-keygen -t rsa -C 2416850394@qq.com ssh-keygen -t rsa -C 483440078@qq.com cmd窗口执行命令时会提示生成私钥公钥的地址及文件名，这里我们自定义文件名方便后续操作   2、将公钥分别配置在对应Github账户的SSH Key中。 登录Gi">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img.jdb1109.dpdns.org/20250512172905378.png">
+<meta property="article:published_time" content="2025-05-12T08:59:18.000Z">
+<meta property="article:modified_time" content="2025-05-12T09:31:05.672Z">
+<meta property="article:author" content="yqs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.jdb1109.dpdns.org/20250512172905378.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://yqs1314.github.io/2025/05/12/github%E5%A4%9A%E7%94%A8%E6%88%B7%E5%AE%9E%E4%BE%8B/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: undefined,
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"Author: yqs","link":"Link: ","source":"Source: Hexo","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source."}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://fastly.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://fastly.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'github多用户实例',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2025-05-12 17:31:05'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">yqs</div><div class="author-info__description"></div></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/dashboard" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-clock"></i><span> 时间轴</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Hexo</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-clock"></i><span> 时间轴</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">github多用户实例</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">Created</span><time datetime="2025-05-12T08:59:18.000Z" title="Created 2025-05-12 16:59:18">2025-05-12</time></span></div><div class="meta-secondline"></div></div></div><article class="post-content" id="article-container"><p><strong>1、同一台电脑上使用两个 github 账号教程</strong></p>
+<p>创建SSH key</p>
+<p>我有两个账号</p>
+<p>ssh-keygen -t rsa -C <a href="mailto:&#x32;&#52;&#49;&#x36;&#56;&#x35;&#48;&#51;&#57;&#x34;&#x40;&#113;&#x71;&#46;&#x63;&#x6f;&#109;">2416850394@qq.com</a></p>
+<p>ssh-keygen -t rsa -C <a href="mailto:&#x34;&#x38;&#x33;&#52;&#52;&#x30;&#x30;&#x37;&#x38;&#64;&#113;&#x71;&#46;&#x63;&#111;&#109;">483440078@qq.com</a></p>
+<p>cmd窗口执行命令时会提示生成私钥公钥的地址及文件名，这里我们自定义文件名方便后续操作</p>
+<p><img src="/2025/05/12/github%E5%A4%9A%E7%94%A8%E6%88%B7%E5%AE%9E%E4%BE%8B/image-20250512170251988.png" alt="image-20250512170251988"></p>
+<hr>
+<p><strong>2、将公钥分别配置在对应Github账户的SSH Key中。</strong></p>
+<p>登录Github，进入setting设置页面。单击 【SSH and GPG keys】，进入SSH Key页面。单击【New SSH Key】，进入添加 SSH Key的页面。将生成的公钥（公钥在指定的新id_rsa文件的id_rsa_xxx.pub中）复制到 key栏，标题随便填写即可。</p>
+<p><img src="/2025/05/12/github%E5%A4%9A%E7%94%A8%E6%88%B7%E5%AE%9E%E4%BE%8B/500b333fb8b357e49af4c3c52d55d242.png" alt="在这里插入图片描述"></p>
+<hr>
+<p><strong>3、在.ssh目录下创建配置文件config</strong></p>
+<p>第一行自定义Host方便后续采用git clone的方式拉取代码</p>
+<p>第三行表示采用私钥验证，使用了上面自定义的私钥文件名</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># yqs_id_rsa配置</span></span><br><span class="line"><span class="attr">Host</span> <span class="string">github.com-yqs                </span></span><br><span class="line"><span class="attr">HostName</span> <span class="string">github.com</span></span><br><span class="line"><span class="attr">IdentityFile</span> <span class="string">~/.ssh/yqs_id_rsa</span></span><br><span class="line"><span class="attr">User</span> <span class="string">yqs</span></span><br><span class="line"><span class="comment"># PreferredAuthentications publickey</span></span><br><span class="line"><span class="comment"># User 2416850394@qq.com</span></span><br><span class="line"><span class="comment"># AddKeysToAgent yes</span></span><br><span class="line"><span class="comment"># UseKeychain yes</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># jdb_id_rsa配置</span></span><br><span class="line"><span class="attr">Host</span> <span class="string">github.com-jdb                </span></span><br><span class="line"><span class="attr">HostName</span> <span class="string">github.com</span></span><br><span class="line"><span class="attr">IdentityFile</span> <span class="string">~/.ssh/jdb_id_rsa</span></span><br><span class="line"><span class="attr">User</span> <span class="string">jdb</span></span><br><span class="line"><span class="comment"># PreferredAuthentications publickey</span></span><br><span class="line"><span class="comment"># User 483440078@qq.com</span></span><br><span class="line"><span class="comment"># AddKeysToAgent yes</span></span><br><span class="line"><span class="comment"># UseKeychain yes</span></span><br></pre></td></tr></table></figure>
+
+<p>验证SSH连接</p>
+<p><img src="/2025/05/12/github%E5%A4%9A%E7%94%A8%E6%88%B7%E5%AE%9E%E4%BE%8B/image-20250512170705818.png" alt="image-20250512170705818"></p>
+<hr>
+<p><strong>4、使用方式</strong></p>
+<p>假设我用jdb账户一同开发yqs账户的某个仓库代码</p>
+<p>在某个文件夹下使用git clone命令克隆源代码（github.com-jdb对应上方的config）</p>
+<blockquote>
+<p>git clone <a href="mailto:&#103;&#105;&#x74;&#64;&#103;&#x69;&#x74;&#x68;&#117;&#98;&#x2e;&#x63;&#111;&#109;&#x2d;&#106;&#x64;&#98;">git@github.com-jdb</a>:yqs1314&#x2F;minio.git</p>
+</blockquote>
+<p><img src="/2025/05/12/github%E5%A4%9A%E7%94%A8%E6%88%B7%E5%AE%9E%E4%BE%8B/image-20250512171128064.png" alt="image-20250512171128064"></p>
+<p>用编程工具如idea打开克隆后的minio项目，打开终端，配置用户名、密码，方便jdb用户pull、push代码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config user.name <span class="string">&quot;jdb&quot;</span></span><br><span class="line">git config user.email <span class="string">&quot;483440078@qq.com&quot;</span>     </span><br></pre></td></tr></table></figure>
+
+<p>这样，yqs和jdb两个账户便可以通过ssh配置的方式，共同在同一台电脑上开发了！</p>
+<hr>
+<blockquote>
+<p>生成的文件及手动创建的config相关页面</p>
+</blockquote>
+<p><img src="/2025/05/12/github%E5%A4%9A%E7%94%A8%E6%88%B7%E5%AE%9E%E4%BE%8B/image-20250512171536196.png" alt="image-20250512171536196"></p>
+<hr>
+<blockquote>
+<p>git操作，想要撤销远程已经push的commit，使用git revert命令，然后再git push，这样远程仓库的源码中就没有你想撤销的那段代码了。好处：保留历史记录方便追踪！</p>
+</blockquote>
+<p><img src="/2025/05/12/github%E5%A4%9A%E7%94%A8%E6%88%B7%E5%AE%9E%E4%BE%8B/image-20250512172750907.png" alt="image-20250512172750907"></p>
+<hr>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">yqs</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://yqs1314.github.io/2025/05/12/github%E5%A4%9A%E7%94%A8%E6%88%B7%E5%AE%9E%E4%BE%8B/">https://yqs1314.github.io/2025/05/12/github%E5%A4%9A%E7%94%A8%E6%88%B7%E5%AE%9E%E4%BE%8B/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post_share"><div class="social-share" data-image="https://img.jdb1109.dpdns.org/20250512172905378.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://fastly.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2025/05/09/%E5%AD%A6%E4%B9%A0Java%E7%AC%94%E8%AE%B0/"><img class="next-cover" src="https://img.jdb1109.dpdns.org/20250509155517353.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">学习Java笔记</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">yqs</div><div class="author-info__description"></div></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/dashboard" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">微信公众号: xxxxxx</div></div></div></div></main><footer id="footer" style="background: #FFFFFF"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2025 By yqs</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/chenxz21/hexo-theme-bcxm">Bcxm</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://fastly.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script type="text/javascript" src="https://fastly.jsdelivr.net/npm/leancloud-storage@4.10.0/dist/av-min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://fastly.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script id="click-heart" src="https://fastly.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
